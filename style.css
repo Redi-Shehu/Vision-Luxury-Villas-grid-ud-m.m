@@ -1,0 +1,50 @@
+/* font-family: "Titillium Web", serif; */
+/* font-weight: 200-300-400-600-700-900; */
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+/* -----------------utility components-----------*/
+:root {
+  /* colors */
+  --color-primary: #730039;
+  --color-primary-m-light: hsla(330, 100%, 23%, 0.55);
+  --color-primary-m-dark: hsla(330, 100%, 23%, 0.85);
+
+  --color-secondary: #ffc513;
+  --color-secondary-m-light: hsla(45, 100%, 54%, 0.55);
+  --color-secondary-m-dark: hsla(45, 100%, 54%, 0.8);
+
+  --color-tertiary: #ff724c;
+  --color-tertiary-m-light: hsla(13, 100%, 65%, 0.55);
+  --color-tertiary-m-dark: hsla(13, 100%, 65%, 0.8);
+
+  --color-quaternary: #f6eedf;
+  --color-quaternary-m-light: hsla(39, 56%, 92%, 0.55);
+  --color-quaternary-m-dark: hsla(39, 56%, 92%, 0.8);
+
+  /* transitions */
+  --transition-duration: 0.3s;
+  /* section title font-size */
+  --font-size-title: calc(2rem + 2vw);
+  /* section padding */
+  --padding-section: 8vh 3vw;
+}
+
+body {
+  font-family: "Titillium Web", serif;
+  line-height: 1.7;
+  background-color: var(--color-quaternary);
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr repeat(10, minmax(min-content, 11rem)) 1fr;
+}
