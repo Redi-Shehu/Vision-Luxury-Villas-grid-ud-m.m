@@ -43,8 +43,106 @@ body {
   font-family: "Titillium Web", serif;
   line-height: 1.7;
   background-color: var(--color-quaternary);
+  font-size: 2rem;
 }
 .container {
   display: grid;
-  grid-template-columns: 1fr repeat(10, minmax(min-content, 11rem)) 1fr;
+  /* grid-template-columns:
+    [container-start]1fr [center-start]repeat(
+      10,
+      [col-start] minmax(min-content, 11rem) [col-end]
+    )
+    [center-end] 1fr [container-end];
+  grid-template-rows: 100vh repeat(8, min-content); */
+  grid-template-columns:
+    1fr repeat(10, minmax(min-content, 11rem))
+    1fr;
+  grid-template-rows: 100vh repeat(8, min-content);
+}
+/* --------------Header Section-------------- */
+.header {
+  /* grid-column: container-start / container-end; */
+  grid-column: 1/-1;
+  background-color: var(--color-primary);
+}
+/* --------------Booking Section-------------- */
+.booking-content {
+  /* grid-column: center-start / col-end 6; */
+  grid-column: 2/8;
+  background-color: var(--color-secondary);
+  height: 40rem;
+}
+/* --------------Booking Date Section-------------- */
+.booking-date {
+  /* grid-column: col-start 7 / center-end; */
+  grid-column: 8/12;
+  background-color: var(--color-tertiary);
+  height: 40rem;
+}
+/* --------------Villas Section-------------- */
+.villas {
+  /* grid-column: container-start / container-end; */
+  grid-column: 1/-1;
+  background-color: var(--color-primary);
+  height: 40rem;
+}
+/* --------------Motto Section-------------- */
+.motto {
+  /* grid-column: container-start / container-end; */
+  grid-column: 1/-1;
+  background-color: var(--color-secondary);
+  height: 40rem;
+}
+/* --------------Events Content Section-------------- */
+.events-content {
+  /* grid-column: container-start / col-end 9; */
+  grid-column: 1/11;
+  background-color: var(--color-tertiary);
+  height: 40rem;
+}
+/* --------------Events Text Section-------------- */
+.events-date {
+  /* grid-column: col-start 10 / center-end; */
+  grid-column: 11/12;
+  background-color: var(--color-primary);
+}
+/* --------------Gallery Text Section-------------- */
+.gallery-text {
+  /* grid-column: center-start / col-end 1; */
+  grid-column: 2/3;
+  background-color: var(--color-secondary);
+}
+/* --------------Gallery carousel Section-------------- */
+.gallery-carousel {
+  /* grid-column: col-start / container-end; */
+  grid-column: 3/13;
+  height: 40rem;
+  background-color: var(--color-tertiary);
+}
+/* --------------Features Content Section-------------- */
+.features-content {
+  /* grid-column: container-start / col-end 9; */
+  grid-column: 1/11;
+  background-color: var(--color-primary);
+  height: 40rem;
+}
+/* --------------Features Text Section-------------- */
+.features-text {
+  /* grid-column: col-start 10 / center-end; */
+  grid-column: 11/12;
+  background-color: var(--color-secondary);
+}
+/* --------------Testimonial Section-------------- */
+.testimonials {
+  /* grid-column: center-start / center-end; */
+  grid-column: 2/12;
+  background-color: var(--color-tertiary);
+  height: 40rem;
+}
+/* --------------Footer Section-------------- */
+.footer {
+  /* grid-column: container-start / container-end; */
+  grid-column: 1/-1;
+  background-color: var(--color-primary);
+  height: 40rem;
 }
