@@ -138,25 +138,45 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  /* display: grid;
+  place-items: center; */
+  gap: 0.5rem;
   padding: 1rem;
+  transition: all var(--transition-duration) ease-in-out;
 }
 .line {
   background-color: #fff;
-  height: 0.5rem;
+  height: 0.4rem;
+  border-radius: var(--radius);
+  transition: all var(--transition-duration) ease-in-out;
 }
 .line:first-child {
-  width: 50%;
+  width: 60%;
   align-self: flex-start;
+  /* justify-self: start; */
 }
 .line:nth-child(2) {
   width: 100%;
 }
 .line:last-child {
-  width: 50%;
+  width: 60%;
   align-self: flex-end;
+  /* justify-self: end; */
+}
+/* Rotating the Menu */
+.header__main-nav--hamburger:hover .line:first-child {
+  transform: rotate(405deg) translateY(0.2rem) translateX(0.4rem);
+}
+.header__main-nav--hamburger:hover .line:nth-child(2) {
+  transform: rotate(315deg);
+}
+.header__main-nav--hamburger:hover .line:last-child {
+  transform: rotate(405deg) translateY(-0.2rem) translateX(-0.4rem);
 }
 .header__main-nav--menu {
+  /* visibility: hidden; */
+}
+.header__main-nav--menu > div {
 }
 /* --------------Booking Section-------------- */
 .booking-content {
