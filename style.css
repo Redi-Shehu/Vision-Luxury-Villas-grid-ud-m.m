@@ -177,7 +177,19 @@ i {
   /* visibility: hidden; */
 }
 .header__main-nav--menu > div {
+  background-color: var(--color-secondary-m-dark);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+
+  transform: scaleX(0);
+  transition: all var(--transition-duration) ease-in-out;
 }
+.header__main-nav--menu .nav-menu-clicked {
+  transform: scaleX(1);
+}
+
 /* --------------Booking Section-------------- */
 .booking-content {
   /* grid-column: center-start / col-end 6; */
