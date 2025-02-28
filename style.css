@@ -12,6 +12,49 @@
 html {
   font-size: 62.5%;
 }
+body {
+  font-family: "Titillium Web", serif;
+  line-height: 1.7;
+  background-color: var(--color-quaternary);
+  font-size: 2rem;
+}
+a,
+input[type="submit"] {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: var(--color-quaternary);
+  font-size: calc(0.5rem + 1vw);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+
+  position: relative;
+  transition: all var(--transition-duration) cubic-bezier(1, 0, 0, 1);
+  z-index: 1;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin-bottom: 4rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+p {
+  color: #fff;
+  font-size: calc(1rem + 1vw);
+  font-weight: 300;
+}
+i {
+  font-size: var(--font-size-title);
+  color: var(--color-secondary);
+}
 /* -----------------utility components-----------*/
 :root {
   /* colors */
@@ -37,14 +80,11 @@ html {
   --font-size-title: calc(2rem + 2vw);
   /* section padding */
   --padding-section: 8vh 3vw;
+  /* radius */
+  --radius: 0.3rem;
 }
 
-body {
-  font-family: "Titillium Web", serif;
-  line-height: 1.7;
-  background-color: var(--color-quaternary);
-  font-size: 2rem;
-}
+/* ----------------------------------------------------- */
 .container {
   display: grid;
   /* grid-template-columns:
@@ -64,6 +104,59 @@ body {
   /* grid-column: container-start / container-end; */
   grid-column: 1/-1;
   background-color: var(--color-primary);
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-primary-m-dark)
+    ),
+    url(./img/hero.jpg) center / cover no-repeat;
+}
+.header__main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  z-index: 10;
+  /* background-color: var(--color-secondary); */
+}
+.header__main-nav--hamburger {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-secondary);
+  /* opacity: 0 */
+  cursor: pointer;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.line {
+  background-color: #fff;
+  height: 0.5rem;
+}
+.line:first-child {
+  width: 50%;
+  align-self: flex-start;
+}
+.line:nth-child(2) {
+  width: 100%;
+}
+.line:last-child {
+  width: 50%;
+  align-self: flex-end;
+}
+.header__main-nav--menu {
 }
 /* --------------Booking Section-------------- */
 .booking-content {
