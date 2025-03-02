@@ -32,7 +32,7 @@ a:visited {
 
   position: relative;
   transition: all var(--transition-duration) cubic-bezier(1, 0, 0, 1);
-  z-index: 1;
+  z-index: 5;
 }
 ul {
   list-style: none;
@@ -120,9 +120,13 @@ i {
   display: grid;
   place-items: center;
 
-  z-index: 10;
   /* background-color: var(--color-secondary); */
 }
+/* through js --- above everything else when clicked*/
+.zindex {
+  z-index: 10;
+}
+/* ----- */
 .header__main-nav--hamburger {
   position: absolute;
   top: 3rem;
@@ -132,7 +136,7 @@ i {
   background-color: var(--color-secondary);
   /* opacity: 0 */
   cursor: pointer;
-  z-index: 20;
+  z-index: 10;
 
   display: flex;
   flex-direction: column;
@@ -143,6 +147,18 @@ i {
   gap: 0.5rem;
   padding: 1rem;
   transition: all var(--transition-duration) ease-in-out;
+
+  animation: main-nav 3s;
+}
+@keyframes main-nav {
+  0% {
+    transform: translateX(150rem) rotate(-720deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
 }
 .line {
   background-color: #fff;
@@ -186,6 +202,7 @@ i {
   transform: scaleX(0);
   transition: all var(--transition-duration) ease-in-out;
 }
+/* through js --- when clicked */
 .header__main-nav--menu .nav-menu-clicked {
   transform: scaleX(1);
 }
@@ -195,7 +212,6 @@ i {
   z-index: 5;
 
   position: relative;
-  z-index: 1;
 }
 .header__main-nav--menu ul li a:link::before,
 .header__main-nav--menu ul li a:visited::before {
@@ -212,6 +228,62 @@ i {
 }
 .header__main-nav--menu ul li a:hover::before,
 .header__main-nav--menu ul li a:active::before {
+  transform: scale(1);
+}
+.header__logo__content {
+  display: grid;
+  grid-template-columns: 1fr minmax(30rem, 1fr) 1fr;
+  grid-template-rows: min-content;
+  justify-items: center;
+  align-items: center;
+  height: 90%;
+}
+.header__logo__content--logo {
+  grid-column: 2/3;
+  letter-spacing: 0.2rem;
+}
+.header__logo__content--logo span {
+  color: var(--color-tertiary);
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+}
+.header__logo__content--content {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+}
+.header__logo__content--content__title {
+  font-size: calc(4rem + 4vw);
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0 2rem;
+}
+.header__logo__content--content__para {
+  font-size: calc(1rem + 2vw);
+  font-weight: 500;
+  padding: 2vh 2rem 6vh;
+}
+.header__logo__content--content__link:link,
+.header__logo__content--content__link:visited {
+  margin-left: calc(2rem + 2vw);
+  border: 0.2rem solid var(--color-tertiary);
+  position: relative;
+}
+.header__logo__content--content__link:link::before,
+.header__logo__content--content__link:visited::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-tertiary);
+  transform: scaleX(0);
+  transition: transform 0.45s cubic-bezier(1, 0, 0, 1);
+  z-index: -1;
+}
+.header__logo__content--content__link:hover::before,
+.header__logo__content--content__link:active::before {
   transform: scale(1);
 }
 /* --------------Booking Section-------------- */
