@@ -190,9 +190,8 @@ i {
   transform: rotate(405deg) translateY(-0.2rem) translateX(-0.4rem);
 }
 .header__main-nav--menu {
-  /* visibility: hidden; */
 }
-.header__main-nav--menu > div {
+.header__main-nav--menu {
   background-color: var(--color-secondary-m-dark);
   width: 100vw;
   height: 100vh;
@@ -203,7 +202,7 @@ i {
   transition: all var(--transition-duration) ease-in-out;
 }
 /* through js --- when clicked */
-.header__main-nav--menu .nav-menu-clicked {
+.header__main-nav--menu.nav-menu-clicked {
   transform: scaleX(1);
 }
 .header__main-nav--menu ul li a:link,
@@ -250,6 +249,8 @@ i {
 .header__logo__content--content {
   grid-column: 1/-1;
   grid-row: 2/3;
+
+  z-index: 5;
 }
 .header__logo__content--content__title {
   font-size: calc(4rem + 4vw);
@@ -290,8 +291,57 @@ i {
 .booking-content {
   /* grid-column: center-start / col-end 6; */
   grid-column: 2/8;
+  padding: var(--padding-section);
+  z-index: 5;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2vh;
+}
+.booking-content__title {
+  font-size: var(--font-size-title);
+  padding: 0 2rem 1rem;
+  font-weight: 300;
+  position: relative;
+}
+.booking-content__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 30%;
+  height: 0.2rem;
   background-color: var(--color-secondary);
-  height: 40rem;
+}
+.booking-content__para {
+  padding: 2rem;
+}
+.booking-content p {
+  color: var(--color-primary);
+}
+.booking-content__icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 2rem;
+}
+.booking-content__icons--weather,
+.booking-content__icons--time {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 10vh;
+  place-items: center;
+  /* display: flex;
+  align-items: center;
+  gap: calc(1rem + 1vw); */
+}
+.booking-content__icons--weather p {
+}
+.booking-content__icons--weather p sup {
+}
+.fa-sun {
+}
+.booking-content__icons--time {
+}
+.fa-clock {
 }
 /* --------------Booking Date Section-------------- */
 .booking-date {
@@ -300,6 +350,7 @@ i {
   background-color: var(--color-tertiary);
   height: 40rem;
 }
+
 /* --------------Villas Section-------------- */
 .villas {
   /* grid-column: container-start / container-end; */
@@ -366,4 +417,19 @@ i {
   grid-column: 1/-1;
   background-color: var(--color-primary);
   height: 40rem;
+}
+
+/* ----------------------Media 1000px------------------------ */
+@media screen and (max-width: 1000px) {
+  a:link,
+  a:visited {
+    font-size: calc(1rem + 1vw);
+  }
+}
+/* ----------------------Media 600px------------------------ */
+@media screen and (max-width: 600px) {
+  /* --------------Header Section-------------- */
+  .header__logo__content--content__para {
+    font-size: 2rem;
+  }
 }
