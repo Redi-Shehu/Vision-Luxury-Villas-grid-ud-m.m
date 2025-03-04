@@ -2,7 +2,7 @@
 console.log(123);
 const hamburgerMenu = document.querySelector(".header__main-nav--hamburger");
 const headerMainNav = document.querySelector(".header__main-nav");
-const navMenu = document.querySelector(".header__main-nav--menu > div");
+const navMenu = document.querySelector(".header__main-nav--menu");
 
 hamburgerMenu.addEventListener("click", function () {
   navMenu.classList.toggle("nav-menu-clicked");
