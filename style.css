@@ -1,6 +1,6 @@
 /* font-family: "Titillium Web", serif; */
 /* font-weight: 200-300-400-600-700-900; */
-
+/* !!!! remove z-indexes from each section at the end */
 /* reset */
 *,
 *::before,
@@ -119,7 +119,7 @@ i {
 
   display: grid;
   place-items: center;
-
+  /* z-index: 10; */
   /* background-color: var(--color-secondary); */
 }
 /* through js --- above everything else when clicked*/
@@ -250,7 +250,7 @@ i {
   grid-column: 1/-1;
   grid-row: 2/3;
 
-  z-index: 5;
+  /* z-index: 5; */
 }
 .header__logo__content--content__title {
   font-size: calc(4rem + 4vw);
@@ -287,7 +287,7 @@ i {
 .header__logo__content--content__link:active::before {
   transform: scale(1);
 }
-/* --------------Booking Section-------------- */
+/* --------------Booking Content Section-------------- */
 .booking-content {
   /* grid-column: center-start / col-end 6; */
   grid-column: 2/8;
@@ -349,7 +349,6 @@ i {
   z-index: 5;
   /* grid-column: col-start 7 / center-end; */
   grid-column: 8/12;
-  background-color: var(--color-primary-m-light);
   padding: var(--padding-section);
 
   display: grid;
@@ -398,7 +397,7 @@ i {
   left: 50%;
   transform: translateX(-50%);
   width: 20%;
-  height: 0.7rem;
+  height: 1rem;
   background-color: var(--color-secondary);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -416,6 +415,9 @@ i {
 }
 .booking-date__contact {
   align-self: end;
+}
+.booking-date__contact p {
+  color: var(--color-primary);
 }
 .booking-date__contact--link:link,
 .booking-date__contact--link:visited {
@@ -436,10 +438,37 @@ i {
 }
 /* --------------Villas Section-------------- */
 .villas {
+  z-index: 5;
   /* grid-column: container-start / container-end; */
   grid-column: 1/-1;
   background-color: var(--color-primary);
-  height: 40rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 2rem;
+}
+.villas__villa {
+}
+div[class^="vill"] {
+  padding: 2rem;
+}
+.villa-1 {
+}
+.villa-2 {
+}
+.villa-3 {
+}
+.villa-4 {
+}
+.villa-5 {
+}
+.villa-6 {
+}
+.villas__villa--title {
+  text-align: center;
+}
+.villas__villa--para {
+}
+.villas__villa--link {
 }
 /* --------------Motto Section-------------- */
 .motto {
@@ -509,10 +538,74 @@ i {
     font-size: calc(1rem + 1vw);
   }
 }
+/* ----------------------Media 800px------------------------ */
+@media screen and (max-width: 800px) {
+  /* --------------Booking Content Section-------------- */
+  .booking-content {
+    padding: 4vh 3vw;
+    grid-column: 2/12;
+  }
+  .booking-content__title {
+    text-align: center;
+  }
+  .booking-content__title::after {
+    left: 40%;
+    width: 20%;
+  }
+  /* --------------Booking Date Section-------------- */
+  .booking-date {
+    padding: 4vh 3vw;
+    grid-column: 2/12;
+  }
+  .booking-date__schedule--arrival > div,
+  .booking-date__schedule--departure > div,
+  .booking-date__schedule--guests > div {
+    padding: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content;
+    column-gap: 2vw;
+    place-items: center;
+  }
+  .booking-date__contact {
+    justify-self: center;
+    text-align: center;
+  }
+}
 /* ----------------------Media 600px------------------------ */
 @media screen and (max-width: 600px) {
   /* --------------Header Section-------------- */
   .header__logo__content--content__para {
     font-size: 2rem;
   }
+  /* --------------Booking Content Section-------------- */
+  .booking-content p {
+    font-size: 1.5rem;
+  }
 }
+/* ----------------------Media 400px------------------------ */
+@media screen and (max-width: 400px) {
+  /* --------------Booking Date Section-------------- */
+  .booking-date {
+    grid-template-rows: 1fr min-content;
+    row-gap: 4rem;
+  }
+  .booking-date__schedule {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+}
+
+/* --------------Header Section-------------- */
+/* --------------Booking Content Section-------------- */
+/* --------------Booking Date Section-------------- */
+/* --------------Villas Section-------------- */
+/* --------------Motto Section-------------- */
+/* --------------Events Content Section-------------- */
+/* --------------Events Text Section-------------- */
+/* --------------Gallery Text Section-------------- */
+/* --------------Gallery carousel Section-------------- */
+/* --------------Features Content Section-------------- */
+/* --------------Features Text Section-------------- */
+/* --------------Testimonial Section-------------- */
+/* --------------Footer Section-------------- */
