@@ -448,10 +448,17 @@ i {
 }
 .villas__villa {
 }
+/* same as above class selector */
 div[class^="vill"] {
   padding: 2rem;
+  transition: all var(--transition-duration) ease-in;
+}
+div[class^="vill"]:hover,
+div[class^="vill"]:active {
+  transform: scale(1.05);
 }
 .villa-1 {
+  /* background: url(./img/Villas/villa-1.jpg) center/cover no-repeat; */
 }
 .villa-2 {
 }
@@ -464,11 +471,45 @@ div[class^="vill"] {
 .villa-6 {
 }
 .villas__villa--title {
+  font-size: var(--font-size-title);
+  padding: 0 2rem 1rem;
   text-align: center;
+  color: #fff;
+  text-transform: uppercase;
 }
 .villas__villa--para {
+  font-size: 2rem;
 }
-.villas__villa--link {
+.villas__villa--link:link,
+.villas__villa--link:visited {
+  display: inline-block;
+  margin: 2rem 0;
+  background-color: #fff;
+  color: var(--color-primary);
+  z-index: 2;
+  overflow: hidden;
+}
+.villas__villa--link:hover,
+.villas__villa--link:active {
+}
+.villas__villa--link:link::before,
+.villas__villa--link:visited::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transition: transform var(--transition-duration) ease-in-out;
+  z-index: -1;
+}
+
+.villas__villa--link:hover::before,
+.villas__villa--link:active::before {
+  height: 400%;
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1);
 }
 /* --------------Motto Section-------------- */
 .motto {
