@@ -499,7 +499,7 @@ div[class^="vill"]:active {
       var(--color-primary-m-light),
       var(--color-tertiary-m-light)
     ),
-    url(./img/Villas/villa-6.jpg) center/cover no-repeat;
+    url(./img/Villas/villa-6.jpg);
 }
 .villas__villa--title {
   font-size: var(--font-size-title);
@@ -577,12 +577,57 @@ div[class^="vill"]:active {
 }
 /* --------------Events Content Section-------------- */
 .events-content {
+  z-index: 5;
   /* grid-column: container-start / col-end 9; */
   grid-column: 1/11;
-  background-color: var(--color-tertiary);
-  height: 40rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-/* --------------Events Text Section-------------- */
+.events-content > div {
+  padding: var(--padding-section);
+
+  display: grid;
+
+  grid-template-rows: repeat(2, min-content);
+  gap: 4vh;
+  justify-items: start;
+  align-items: center;
+}
+.events-content__event-1--title,
+.events-content__event-2--title {
+  font-size: var(--font-size-title);
+  font-weight: 400;
+  color: #fff;
+}
+.events-content > div:first-child {
+  background: linear-gradient(
+      var(--color-tertiary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Events/beach-party.jpg) center/cover no-repeat;
+  border-right: solid 0.2rem var(--color-tertiary);
+}
+.events-content > div:last-child {
+  background: linear-gradient(
+      var(--color-tertiary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Events/culture-discovery.jpg) center/cover no-repeat;
+  border-left: solid 0.2rem var(--color-tertiary);
+}
+.events-content__event-1 {
+}
+.events-content__event-1--title {
+}
+.events-content__event-1--para {
+}
+.events-content__event-2 {
+}
+.events-content__event-2--title {
+}
+.events-content__event-2--para {
+}
+/* --------------Events Date Section-------------- */
 .events-date {
   /* grid-column: col-start 10 / center-end; */
   grid-column: 11/12;
@@ -697,6 +742,23 @@ div[class^="vill"]:active {
   .motto__content--para {
     font-size: 1.5rem;
   }
+  /* --------------Events Content Section-------------- */
+  .events-content {
+    grid-column: 1/-1;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+  .events-content > div:first-child,
+  .events-content > div:last-child {
+    border: none;
+  }
+  .events-content__event-1--para,
+  .events-content__event-2--para {
+    font-size: 1.5rem;
+  }
+  /* --------------Events Date Section-------------- */
+  .events-date {
+    display: none;
+  }
 }
 /* ----------------------Media 400px------------------------ */
 @media screen and (max-width: 400px) {
@@ -722,7 +784,7 @@ div[class^="vill"]:active {
 /* --------------Villas Section-------------- */
 /* --------------Motto Section-------------- */
 /* --------------Events Content Section-------------- */
-/* --------------Events Text Section-------------- */
+/* --------------Events Date Section-------------- */
 /* --------------Gallery Text Section-------------- */
 /* --------------Gallery carousel Section-------------- */
 /* --------------Features Content Section-------------- */
