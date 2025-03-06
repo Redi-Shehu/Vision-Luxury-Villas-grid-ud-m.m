@@ -441,7 +441,6 @@ i {
   z-index: 5;
   /* grid-column: container-start / container-end; */
   grid-column: 1/-1;
-  background-color: var(--color-primary);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   gap: 2rem;
@@ -452,23 +451,55 @@ i {
 div[class^="vill"] {
   padding: 2rem;
   transition: all var(--transition-duration) ease-in;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 div[class^="vill"]:hover,
 div[class^="vill"]:active {
   transform: scale(1.05);
 }
 .villa-1 {
-  /* background: url(./img/Villas/villa-1.jpg) center/cover no-repeat; */
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-1.jpg);
 }
 .villa-2 {
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-2.jpg);
 }
 .villa-3 {
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-3.jpg);
 }
 .villa-4 {
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-4.jpg);
 }
 .villa-5 {
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-5.jpg);
 }
 .villa-6 {
+  background: linear-gradient(
+      var(--color-primary-m-light),
+      var(--color-tertiary-m-light)
+    ),
+    url(./img/Villas/villa-6.jpg) center/cover no-repeat;
 }
 .villas__villa--title {
   font-size: var(--font-size-title);
@@ -478,7 +509,6 @@ div[class^="vill"]:active {
   text-transform: uppercase;
 }
 .villas__villa--para {
-  font-size: 2rem;
 }
 .villas__villa--link:link,
 .villas__villa--link:visited {
@@ -513,10 +543,37 @@ div[class^="vill"]:active {
 }
 /* --------------Motto Section-------------- */
 .motto {
+  z-index: 5;
   /* grid-column: container-start / container-end; */
   grid-column: 1/-1;
-  background-color: var(--color-secondary);
-  height: 40rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: var(--padding-section);
+}
+.motto__content {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.motto__content--title {
+  font-size: var(--font-size-title);
+  font-weight: 300;
+  padding: 0 2rem 1rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.motto__content--title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.2rem;
+  width: 10%;
+  background-color: #fff;
+}
+.motto__content--para {
 }
 /* --------------Events Content Section-------------- */
 .events-content {
@@ -571,8 +628,10 @@ div[class^="vill"]:active {
   background-color: var(--color-primary);
   height: 40rem;
 }
-
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
 /* ----------------------Media 1000px------------------------ */
+
 @media screen and (max-width: 1000px) {
   a:link,
   a:visited {
@@ -611,6 +670,10 @@ div[class^="vill"]:active {
     justify-self: center;
     text-align: center;
   }
+  /* --------------Villas Section-------------- */
+  .villas {
+    gap: 0;
+  }
 }
 /* ----------------------Media 600px------------------------ */
 @media screen and (max-width: 600px) {
@@ -620,6 +683,18 @@ div[class^="vill"]:active {
   }
   /* --------------Booking Content Section-------------- */
   .booking-content p {
+    font-size: 1.5rem;
+  }
+  /* --------------Villas Section-------------- */
+  .villas__villa--para {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 4rem 0;
+  }
+  /* --------------Motto Section-------------- */
+  .motto {
+    padding: 4vh 3vw;
+  }
+  .motto__content--para {
     font-size: 1.5rem;
   }
 }
@@ -634,6 +709,10 @@ div[class^="vill"]:active {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: auto;
     justify-items: center;
+  }
+  /* --------------Villas Section-------------- */
+  .villas {
+    grid-template-columns: minmax(30rem, 1fr);
   }
 }
 
