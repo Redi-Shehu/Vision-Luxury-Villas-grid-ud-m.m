@@ -1,6 +1,7 @@
 /* font-family: "Titillium Web", serif; */
 /* font-weight: 200-300-400-600-700-900; */
-/* !!!! remove z-indexes from each section at the end */
+/* !!!! remove z-indexes from each section at the end 
+put z-index on the header__main-nav*/
 /* reset */
 *,
 *::before,
@@ -629,18 +630,43 @@ div[class^="vill"]:active {
 }
 /* --------------Events Date Section-------------- */
 .events-date {
+  z-index: 5;
   /* grid-column: col-start 10 / center-end; */
   grid-column: 11/12;
-  background-color: var(--color-primary);
+  background-color: var(--color-tertiary);
+  display: grid;
+  place-items: center;
+}
+.events-date__content {
+  transform: rotate(90deg);
+}
+.events-date__content--title {
+  font-size: var(--font-size-title);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.2rem;
 }
 /* --------------Gallery Text Section-------------- */
 .gallery-text {
+  z-index: 5;
   /* grid-column: center-start / col-end 1; */
   grid-column: 2/3;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
+  display: grid;
+  place-items: center;
+}
+.gallery-text__content {
+  transform: rotate(-90deg);
+}
+.gallery-text__content--title {
+  font-size: var(--font-size-title);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.2rem;
 }
 /* --------------Gallery carousel Section-------------- */
 .gallery-carousel {
+  z-index: 5;
   /* grid-column: col-start / container-end; */
   grid-column: 3/13;
   height: 40rem;
@@ -648,6 +674,7 @@ div[class^="vill"]:active {
 }
 /* --------------Features Content Section-------------- */
 .features-content {
+  z-index: 5;
   /* grid-column: container-start / col-end 9; */
   grid-column: 1/11;
   background-color: var(--color-primary);
@@ -655,12 +682,14 @@ div[class^="vill"]:active {
 }
 /* --------------Features Text Section-------------- */
 .features-text {
+  z-index: 5;
   /* grid-column: col-start 10 / center-end; */
   grid-column: 11/12;
   background-color: var(--color-secondary);
 }
 /* --------------Testimonial Section-------------- */
 .testimonials {
+  z-index: 5;
   /* grid-column: center-start / center-end; */
   grid-column: 2/12;
   background-color: var(--color-tertiary);
@@ -668,6 +697,7 @@ div[class^="vill"]:active {
 }
 /* --------------Footer Section-------------- */
 .footer {
+  z-index: 5;
   /* grid-column: container-start / container-end; */
   grid-column: 1/-1;
   background-color: var(--color-primary);
@@ -757,6 +787,22 @@ div[class^="vill"]:active {
   }
   /* --------------Events Date Section-------------- */
   .events-date {
+    display: none;
+  }
+  /* --------------Gallery Text Section-------------- */
+  .gallery-text {
+    display: none;
+  }
+  /* --------------Gallery carousel Section-------------- */
+  .gallery-carousel {
+    grid-column: 1/-1;
+  }
+  /* --------------Features Content Section-------------- */
+  .features-content {
+    grid-column: 1/-1;
+  }
+  /* --------------Features Text Section-------------- */
+  .features-text {
     display: none;
   }
 }
