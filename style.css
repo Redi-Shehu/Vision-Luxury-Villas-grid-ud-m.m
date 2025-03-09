@@ -593,13 +593,16 @@ div[class^="vill"]:active {
 .motto__content--para {
 }
 /* --------------Events Content Section-------------- */
-.events-content {
+/* ---------some Features Content Section-------------- */
+.events-content,
+.features-content {
   /* grid-column: container-start / col-end 9; */
   grid-column: 1/11;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.events-content > div {
+.events-content > div,
+.features-content > div {
   padding: var(--padding-section);
 
   display: grid;
@@ -610,7 +613,9 @@ div[class^="vill"]:active {
   align-items: center;
 }
 .events-content__event-1--title,
-.events-content__event-2--title {
+.events-content__event-2--title,
+.features-content__feature-1--title,
+.features-content__feature-2--title {
   font-size: var(--font-size-title);
   font-weight: 400;
   color: #fff;
@@ -635,6 +640,12 @@ div[class^="vill"]:active {
 }
 .events-content__event-1--title {
 }
+.events-content__event-1--para,
+.events-content__event-2--para,
+.features-content__feature-1--para,
+.features-content__feature-2--para {
+  font-weight: 500;
+}
 .events-content__event-1--para {
 }
 .events-content__event-2 {
@@ -644,17 +655,21 @@ div[class^="vill"]:active {
 .events-content__event-2--para {
 }
 /* --------------Events Text Section-------------- */
-.events-text {
+/* ---------some Features Text Section-------------- */
+.events-text,
+.features-text {
   /* grid-column: col-start 10 / center-end; */
   grid-column: 11/12;
   background-color: var(--color-tertiary);
   display: grid;
   place-items: center;
 }
-.events-text__content {
+.events-text__content,
+.features-text__content {
   transform: rotate(90deg);
 }
-.events-text__content--title {
+.events-text__content--title,
+.features-text__content--title {
   font-size: var(--font-size-title);
   font-weight: 500;
   color: #fff;
@@ -745,14 +760,44 @@ div[class^="vill"]:active {
 .features-content {
   /* grid-column: container-start / col-end 9; */
   grid-column: 1/11;
-  background-color: var(--color-primary);
-  height: 40rem;
+}
+.features-content > div:first-child {
+  background: linear-gradient(
+      var(--color-secondary-m-light),
+      var(--color-secondary-m-light)
+    ),
+    url(./img/Features/cocktail.jpg) center / cover no-repeat;
+  border-right: solid 0.2rem var(--color-secondary);
+}
+.features-content > div:last-child {
+  background: linear-gradient(
+      var(--color-secondary-m-light),
+      var(--color-secondary-m-light)
+    ),
+    url(./img/Features/surfing.jpg) center / cover no-repeat;
+  border-left: solid 0.2rem var(--color-secondary);
+}
+.features-content__feature-1 {
+}
+.features-content__feature-1--title {
+}
+.features-content__feature-1--para {
+}
+.features-content__feature-2 {
+}
+.features-content__feature-2--title {
+}
+.features-content__feature-2--para {
 }
 /* --------------Features Text Section-------------- */
 .features-text {
   /* grid-column: col-start 10 / center-end; */
   grid-column: 11/12;
   background-color: var(--color-secondary);
+}
+.features-text__content {
+}
+.features-text__content--title {
 }
 /* --------------Testimonial Section-------------- */
 .testimonials {
@@ -838,20 +883,26 @@ div[class^="vill"]:active {
     font-size: 1.5rem;
   }
   /* --------------Events Content Section-------------- */
-  .events-content {
+  /* ---------some Features Content Section-------------- */
+  .events-content,
+  .features-content {
     grid-column: 1/-1;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
   .events-content > div:first-child,
-  .events-content > div:last-child {
+  .events-content > div:last-child,
+  .features-content > div:first-child,
+  .features-content > div:last-child {
     border: none;
   }
   .events-content__event-1--para,
-  .events-content__event-2--para {
+  .events-content__event-2--para,
+  .features-content__feature-1--para,
+  .features-content__feature-2--para {
     font-size: 1.5rem;
   }
   /* --------------Events Date Section-------------- */
-  .events-date {
+  .events-text {
     display: none;
   }
   /* --------------Gallery Text Section-------------- */
